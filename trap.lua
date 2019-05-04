@@ -1,8 +1,10 @@
-local part = script.parent
+local part = script.Parent
 
 part.Touched:connect(function(other)
-    local player = other.Parent:findFirstChild("Humanoid")
-	if (player ~= nil) then 		
-		player.health = 0 
-	end
+    local player =other.Parent:FindFirstChildWhichIsA("Humanoid")
+ 
+    if ( player ) then
+        -- Set player's health to 0
+        player.Health = 0
+    end
 end)
